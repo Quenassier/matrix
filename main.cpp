@@ -191,6 +191,21 @@ int main() {
     matrix2.set_element(2, 1, 1);
     matrix2.set_element(0, 2, 2);
  
+     std::cout << "Matrix 1:" << std::endl;
+    for (int i = 0; i < matrix1.get_line(); ++i) {
+        for (int j = 0; j < matrix1.get_collumn(); ++j) {
+            std::cout << matrix1.get_element(i, j) << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "Matrix 2:" << std::endl;
+for (int i = 0; i < matrix2.get_line(); ++i) {
+    for (int j = 0; j < matrix2.get_collumn(); ++j) {
+        std::cout << matrix2.get_element(i, j) << " ";
+    }
+    std::cout << std::endl;
+}
+ 
     matrix1.Sum_matrix(matrix2);
     matrix2.Sub_matrix(matrix1);
     matrix1.Mul_number(2);
