@@ -10,6 +10,9 @@ class Matrix{
 public:
   Matrix();
   Matrix(int line, int collumn);
+  Matrix(Matrix &other);
+  Matrix(const Matrix &other);
+  ~Matrix();
   
   int get_collumn();
   int get_line();
@@ -25,6 +28,10 @@ public:
   void Mul_number(double num);
   void Mul_matrix(const Matrix &other);
   Matrix Transpose();
+  Matrix CalcComplements();
+  double Determinant();
+  Matrix InverseMatrix();
+  void Output();
   
 private:
   int collumn_;
@@ -32,7 +39,9 @@ private:
   double** matrix_;
   double** allocate_matrix(int line, int collumn);
   void fill();
-  
+  double determinantRecursive(Matrix& m);
+  void getLittleMatrix(const Matrix& big, Matrix& little, int rowToExclude, int columnToExclude);
+  double sign(int line, int collumn);
 };
 
 #endif //__MY_MATRIX_PLUS_HPP_
